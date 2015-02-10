@@ -52,3 +52,4 @@ We expect you to test drive your code, ensuring data integrity and consistent ma
 
 ###mockup.png
 
+![mockup.png](https://bytebucket.org/ttl-engineering/recruitment_test_webdev/raw/d48db490ba18aeff1ce257aa6103d1cb72dcd98b/mockup.png?token=a4d1987725e9dd4ffea165d06559cc6a1c4715a6)
