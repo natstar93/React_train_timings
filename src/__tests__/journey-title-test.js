@@ -12,11 +12,21 @@ describe('Journey title', function() {
     );
     expect(journeyScheduled.textContent).toEqual('10:00');
   });
+
   it('displays origin station', function() {
     var journeyTitle = TestUtils.renderIntoDocument(<JourneyTitle data={mockedData.journey}/>);
     var journeyOrigin = TestUtils.findRenderedDOMComponentWithClass(
       journeyTitle, 'journey-origin'
     );
     expect(journeyOrigin.textContent).toEqual('Shoreditch High Street');
-  })
+  });
+
+  it('displays destination station', function() {
+    var journeyTitle = TestUtils.renderIntoDocument(<JourneyTitle data={mockedData.journey}/>);
+    var journeyDestination = TestUtils.findRenderedDOMComponentWithClass(
+      journeyTitle, 'journey-destination'
+    );
+    expect(journeyDestination.textContent).toEqual('Canada Water');
+  });
+
 })
