@@ -7,9 +7,16 @@ var mockedData = require('./mocked-data.json');
 describe('Journey title', function() {
   it('displays departure time', function() {
     var journeyTitle = TestUtils.renderIntoDocument(<JourneyTitle data={mockedData.journey}/>);
-    var span = TestUtils.findRenderedDOMComponentWithTag(
-      journeyTitle, 'span'
+    var journeyScheduled = TestUtils.findRenderedDOMComponentWithClass(
+      journeyTitle, 'journey-scheduled'
     );
-    expect(span.textContent).toEqual('10:00');
+    expect(journeyScheduled.textContent).toEqual('10:00');
+  });
+  it('displays origin station', function() {
+    var journeyTitle = TestUtils.renderIntoDocument(<JourneyTitle data={mockedData.journey}/>);
+    var journeyOrigin = TestUtils.findRenderedDOMComponentWithClass(
+      journeyTitle, 'journey-origin'
+    );
+    expect(journeyOrigin.textContent).toEqual('Shoreditch High Street');
   })
 })
