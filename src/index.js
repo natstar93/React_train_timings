@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+var React = require('react');
+var ReactDOM = require('react-dom');
+var JourneyTable = require('./components/journey-table.js');
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<JourneyTable />, document.getElementById('container'));
