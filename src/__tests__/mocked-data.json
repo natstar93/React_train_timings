@@ -10,7 +10,14 @@ module.exports = {
             "scheduled": "10:10",
             "expected": "10:10",
             "actual": "10:10",
-            "platform": ""
+            "platform": "1"
+        },
+        {
+            "station": "Rotherhithe",
+            "scheduled": "10:13",
+            "expected": "10:14",
+            "actual": "10:14",
+            "platform": "2"
         }
     ]
 }
