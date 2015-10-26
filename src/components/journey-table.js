@@ -1,9 +1,18 @@
 var React = require('react');
-var expect = require('expect');
+var JourneyTitle = require('../components/journey-title');
+var data = require('../../ldb.json');
 
 var JourneyTable = React.createClass({
+  getInitialState: function() {
+    return {
+      data:data
+    }
+  },
   render:function() {
-    return (<div></div>)
+    var journeyData = this.state.data;
+    return (
+      <div><JourneyTitle data={journeyData.journey}/></div>
+    )
   }
 });
 

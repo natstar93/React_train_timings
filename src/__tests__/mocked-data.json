@@ -1,0 +1,16 @@
+module.exports = {
+    "journey": {
+        "origin": "Shoreditch High Street",
+        "destination": "Canada Water",
+        "scheduled": "10:00"
+    },
+    "callingPoints": [
+        {
+            "station": "Wapping",
+            "scheduled": "10:10",
+            "expected": "10:10",
+            "actual": "10:10",
+            "platform": ""
+        }
+    ]
+}

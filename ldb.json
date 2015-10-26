@@ -1,4 +1,4 @@
-{
+module.exports = {
     "journey": {
         "origin": "London Euston",
         "destination": "Manchester Piccadilly",
