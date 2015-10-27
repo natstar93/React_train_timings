@@ -31,12 +31,21 @@ body {
   padding: 20px;
 }
 
-.calling-point-scheduled-time {
+.calling-point-timings {
   float:left;
   padding-right: 20px;
+}
+
+.calling-point-scheduled-time {
   color:#0d345d;
   font-weight: bold;
   font-size: 2em;
+}
+
+.calling-point-arrival-time {
+  float: right;
+  color:#0d345d;
+  font-size: 1.3em;
 }
 
 .station-name {
@@ -48,4 +57,6 @@ body {
 
 .platform {
   float:right;
+  color:#0d345d;
+  font-size: 1.3em;
 }

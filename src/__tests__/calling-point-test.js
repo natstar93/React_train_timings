@@ -38,4 +38,14 @@ describe('calling point', function() {
       expect(callingPointPlatform.textContent).toEqual('Platform -');
     });
   });
+
+  describe('arrival time', function() {
+    it('actual arrival time displayed if train was late', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
+      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'calling-point-arrival-time'
+      );
+      expect(callingPointArrival.textContent).toEqual('10:14');
+    });
+  });
 });
