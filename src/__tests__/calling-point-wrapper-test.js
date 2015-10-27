@@ -13,7 +13,7 @@ describe('callingPointWrapper', function() {
 
   it('displays each calling point', function() {
     var callingPoints = TestUtils.renderIntoDocument(<CallingPointWrapper data={mockedData.callingPoints} />);
-    var wrappers = TestUtils.scryRenderedDOMComponentsWithClass(callingPoints, 'calling-point-wrapper');
+    var wrappers = TestUtils.scryRenderedDOMComponentsWithClass(callingPoints, 'calling-point');
     expect(wrappers.length).toEqual(2);
   });
 })

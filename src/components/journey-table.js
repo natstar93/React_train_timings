@@ -12,9 +12,9 @@ var JourneyTable = React.createClass({
   render:function() {
     var journeyData = this.state.data;
     return (
-      <div>
-        <div><JourneyTitle data={journeyData.journey}/></div>
-        <div><CallingPointWrapper data={journeyData.callingPoints}/></div>
+      <div className='journey-panel'>
+        <JourneyTitle data={journeyData.journey}/>
+        <CallingPointWrapper data={journeyData.callingPoints}/>
       </div>
     )
   }

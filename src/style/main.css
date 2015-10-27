@@ -1,0 +1,25 @@
+body {
+  font-family: arial;
+}
+.journey-panel {
+  width: 640px;
+}
+
+.journey-title {
+  background-color: #eeeeee;
+  color:#0d345d;
+  padding: 23px 30px;
+  font-size: 1.7em;
+}
+
+.journey-scheduled {
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.calling-point-wrapper {
+  width:100%;
+}
+.calling-point {
+  padding: 20px;
+}
