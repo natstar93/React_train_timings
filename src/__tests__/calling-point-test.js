@@ -47,5 +47,13 @@ describe('calling point', function() {
       );
       expect(callingPointArrival.textContent).toEqual('10:14');
     });
+
+    it('not displayed if train arrived on time', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
+      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'calling-point-arrival-time'
+      );
+      expect(callingPointArrival.textContent).toEqual('');
+    });
   });
 });
