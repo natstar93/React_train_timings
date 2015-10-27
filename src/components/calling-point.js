@@ -6,7 +6,7 @@ var CallingPoint = React.createClass({
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
-    var arrival = (actual === scheduled ? null : actual || expected);
+    var arrival = (scheduled === (actual || expected ) ? '' : actual || expected);
     return (
       <div className="calling-point clearfix">
         <div className="calling-point-timings">

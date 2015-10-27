@@ -63,5 +63,13 @@ describe('calling point', function() {
       );
       expect(callingPointArrival.textContent).toEqual('10:17');
     });
+
+    it('not displayed if train predicted to arrive on time', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[3]}/>);
+      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'calling-point-arrival-time'
+      );
+      expect(callingPointArrival.textContent).toEqual('');
+    });
   });
 });
