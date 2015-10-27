@@ -11,5 +11,13 @@ describe('calling point', function() {
       callingPoint, 'station-name'
     );
     expect(stationName.textContent).toEqual('Rotherhithe');
+  });
+
+  it('displays scheduled departure time', function() {
+    var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
+    var callingPointTime = TestUtils.findRenderedDOMComponentWithClass(
+      callingPoint, 'calling-point-scheduled-time'
+    );
+    expect(callingPointTime.textContent).toEqual('10:10');
   })
-})
+});

@@ -1,6 +1,11 @@
 body {
   font-family: arial;
 }
+
+.clearfix {
+  overflow: auto;
+}
+
 .journey-panel {
   width: 640px;
 }
@@ -19,7 +24,23 @@ body {
 
 .calling-point-wrapper {
   width:100%;
+  overflow: hidden;
 }
+
 .calling-point {
   padding: 20px;
+}
+
+.calling-point-scheduled-time {
+  float:left;
+  padding-right: 20px;
+  color:#0d345d;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.station-name {
+  float:left;
+  color:#0d345d;
+  font-size: 2em;
 }
