@@ -34,6 +34,7 @@ body {
 .calling-point-timings {
   float:left;
   padding-right: 20px;
+  min-height: 50px;
 }
 
 .calling-point-scheduled-time {
@@ -53,6 +54,12 @@ body {
   width:440px;
   color:#0d345d;
   font-size: 2em;
+}
+
+.departure-status {
+  float:left;
+  color:#0d345d;
+  font-size: 1.4em;
 }
 
 .platform {

@@ -6,7 +6,7 @@ var CallingPoint = React.createClass({
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
-    var arrival = (scheduled === (actual || expected ) ? '' : actual || expected);
+    var arrival = (scheduled === (actual || expected ) ? null : actual || expected);
     return (
       <div className="calling-point clearfix">
         <div className="calling-point-timings">
@@ -20,6 +20,9 @@ var CallingPoint = React.createClass({
         <div className="calling-point-departure">
           <div className="station-name" key={data.id}>
             {data.station}
+          </div>
+          <div className='departure-status'>
+            On time
           </div>
           <div className="platform">
             Platform <strong>{data.platform || '-'}</strong>
