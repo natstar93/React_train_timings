@@ -80,6 +80,14 @@ describe('calling point', function() {
         callingPoint, 'departure-status'
       );
       expect(callingPointStatus.textContent).toEqual('On time');
-    })
+    });
+
+    it('"1 min late" if train was 1 minute late', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
+      var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'departure-status'
+      );
+      expect(callingPointStatus.textContent).toEqual('1 min late');
+    });
   });
 });

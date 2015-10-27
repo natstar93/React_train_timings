@@ -30,6 +30,12 @@ module.exports = {
             "scheduled": "10:19",
             "expected": "10:19",
             "platform": "1"
+        },
+        {
+            "station": "Surrey Quays",
+            "scheduled": "10:52",
+            "expected": "12:14",
+            "platform": "1"
         }
     ]
 }

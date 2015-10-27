@@ -6,7 +6,8 @@ var CallingPoint = React.createClass({
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
-    var arrival = (scheduled === (actual || expected ) ? null : actual || expected);
+    var arrival = actual || expected;
+    var arrivalTimeOutput = (scheduled === arrival ? null : arrival);
     return (
       <div className="calling-point clearfix">
         <div className="calling-point-timings">
@@ -14,7 +15,7 @@ var CallingPoint = React.createClass({
             {data.scheduled}
           </div>
           <div className="calling-point-arrival-time">
-            {arrival}
+            {arrivalTimeOutput}
           </div>
         </div>
         <div className="calling-point-departure">
@@ -22,7 +23,7 @@ var CallingPoint = React.createClass({
             {data.station}
           </div>
           <div className='departure-status'>
-            On time
+            {arrivalStatus(scheduled, arrival)}
           </div>
           <div className="platform">
             Platform <strong>{data.platform || '-'}</strong>
@@ -32,5 +33,20 @@ var CallingPoint = React.createClass({
     )
   }
 })
+
+function arrivalStatus(scheduled, arrival) {
+  if(scheduled === arrival) {
+    return 'On time';
+  }
+  else {
+    return calculateMinsLate(scheduled, arrival) + ' min late';
+  }
+}
+function calculateMinsLate(scheduled, arrival) {
+  var scheduledTimes = scheduled.split(":");
+  var arrivalTimes = arrival.split(":");
+  var difference = (arrivalTimes[1] - scheduledTimes[1]) + 60 * (arrivalTimes[0] - scheduledTimes[0]);
+  return difference;
+}
 
 module.exports = CallingPoint;
