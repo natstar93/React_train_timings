@@ -12,7 +12,7 @@ var CallingPoint = React.createClass({
             {this.props.data.station}
           </div>
           <div className="platform">
-            Platform {this.props.data.platform}
+            Platform {this.props.data.platform || '-'} 
           </div>
         </div>
       </div>

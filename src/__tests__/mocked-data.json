@@ -17,7 +17,7 @@ module.exports = {
             "scheduled": "10:13",
             "expected": "10:14",
             "actual": "10:14",
-            "platform": "2"
+            "platform": ""
         }
     ]
 }

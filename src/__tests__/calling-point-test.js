@@ -27,7 +27,15 @@ describe('calling point', function() {
       var callingPointPlatform = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'platform'
       );
-      expect(callingPointPlatform.textContent).toEqual('1');
+      expect(callingPointPlatform.textContent).toEqual('Platform 1');
+    });
+
+    it('as a \'-\' if platform number is blank', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
+      var callingPointPlatform = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'platform'
+      );
+      expect(callingPointPlatform.textContent).toEqual('Platform -');
     });
   });
 });
