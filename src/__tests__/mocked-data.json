@@ -18,6 +18,12 @@ module.exports = {
             "expected": "10:14",
             "actual": "10:14",
             "platform": "-"
+        },
+        {
+            "station": "Shadwell",
+            "scheduled": "10:16",
+            "expected": "10:17",
+            "platform": "2"
         }
     ]
 }
