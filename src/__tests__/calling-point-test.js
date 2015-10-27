@@ -19,5 +19,15 @@ describe('calling point', function() {
       callingPoint, 'calling-point-scheduled-time'
     );
     expect(callingPointTime.textContent).toEqual('10:10');
-  })
+  });
+
+  describe('displays platform', function() {
+    it('number', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
+      var callingPointPlatform = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'platform'
+      );
+      expect(callingPointPlatform.textContent).toEqual('1');
+    });
+  });
 });

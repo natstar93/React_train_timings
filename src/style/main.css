@@ -40,7 +40,12 @@ body {
 }
 
 .station-name {
-  float:left;
+  float:none;
+  width:400px;
   color:#0d345d;
   font-size: 2em;
+}
+
+.platform {
+  float:right;
 }
