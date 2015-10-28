@@ -29,6 +29,7 @@ body {
 
 .calling-point {
   padding: 20px;
+  color:#0d345d;
 }
 
 .calling-point-timings {
@@ -38,36 +39,35 @@ body {
 }
 
 .calling-point-scheduled-time {
-  color:#0d345d;
   font-weight: bold;
   font-size: 2em;
 }
 
 .calling-point-departure-time {
   float: right;
-  color:#0d345d;
   font-size: 1.3em;
 }
 
 .station-name {
   float:none;
   width:440px;
-  color:#0d345d;
   font-size: 2em;
 }
 
 .departure-status {
   float:left;
-  color:#0d345d;
   font-size: 1.4em;
 }
 
 .platform {
   float:right;
-  color:#0d345d;
   font-size: 1.3em;
 }
 
 .late {
   color:#c91d30;
+}
+
+.visited {
+  color:#999999;
 }

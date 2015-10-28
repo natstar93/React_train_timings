@@ -21,6 +21,14 @@ describe('calling point', function() {
     expect(callingPointTime.textContent).toEqual('10:10');
   });
 
+  it('grey if already visited', function() {
+    var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
+    var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
+      callingPoint, 'calling-point'
+    );
+    expect(callingPointDeparture.className).toContain('visited');
+  })
+
   describe('displays platform', function() {
     it('number', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
@@ -79,6 +87,14 @@ describe('calling point', function() {
       );
       expect(callingPointDeparture.className).toContain('late');
     });
+
+    it('is grey if train previously visited late', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'calling-point-departure-time'
+      );
+      expect(callingPointDeparture.className).toNotContain('late');
+    });
   });
 
   describe('departure status', function() {
@@ -107,15 +123,15 @@ describe('calling point', function() {
     });
 
     it('is not red if train expected on time', function() {
-      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[3]}/>);
       var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'departure-status'
       );
-      expect(callingPointStatus.className).toContain('late');
+      expect(callingPointStatus.className).toNotContain('late');
     });
 
-    it('is not red if train expected on time', function() {
-      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[3]}/>);
+    it('is grey if train previously visited late', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
       var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'departure-status'
       );
