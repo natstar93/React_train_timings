@@ -14,4 +14,4 @@ var CallingPointWrapper = React.createClass({
   }
 });
 
-module.exports = CallingPointWrapper; 
+module.exports = CallingPointWrapper;

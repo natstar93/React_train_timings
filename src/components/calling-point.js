@@ -1,4 +1,5 @@
 var React = require('react');
+var arrivalStatus = require('./arrival-status');
 
 var CallingPoint = React.createClass({
   render : function() {
@@ -32,21 +33,6 @@ var CallingPoint = React.createClass({
       </div>
     )
   }
-})
-
-function arrivalStatus(scheduled, arrival) {
-  if(scheduled === arrival) {
-    return 'On time';
-  }
-  else {
-    return calculateMinsLate(scheduled, arrival) + ' min late';
-  }
-}
-function calculateMinsLate(scheduled, arrival) {
-  var scheduledTimes = scheduled.split(":");
-  var arrivalTimes = arrival.split(":");
-  var difference = (arrivalTimes[1] - scheduledTimes[1]) + 60 * (arrivalTimes[0] - scheduledTimes[0]);
-  return difference;
-}
+});
 
 module.exports = CallingPoint;
