@@ -89,5 +89,29 @@ describe('calling point', function() {
       );
       expect(callingPointStatus.textContent).toEqual('1 min late');
     });
+
+    it('is red if train expected late', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
+      var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'departure-status'
+      );
+      expect(callingPointStatus.className).toContain('late');
+    });
+
+    it('is not red if train expected on time', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
+      var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'departure-status'
+      );
+      expect(callingPointStatus.className).toContain('late');
+    });
+
+    it('is not red if train expected on time', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[3]}/>);
+      var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'departure-status'
+      );
+      expect(callingPointStatus.className).toNotContain('late');
+    });
   });
 });
