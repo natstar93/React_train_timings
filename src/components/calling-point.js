@@ -9,14 +9,15 @@ var CallingPoint = React.createClass({
     var scheduled = data.scheduled;
     var expected = data.expected;
     var departure = actual || expected;
-    var departureTimeOutput = (scheduled === departure ? null : departure);
+    var onTime = scheduled === departure;
+    var departureTimeOutput = (onTime ? null : departure);
     var callingPointDepartureStatus = classNames(this.props.className, {
       'departure-status' : true,
-      'late' : (scheduled !== expected) && !actual
+      'late' : !onTime && !actual
     })
     var departureTime = classNames(this.props.className, {
       'calling-point-departure-time' : true,
-      'late' : (scheduled !== expected) && !actual
+      'late' : !onTime && !actual
     });
     var callingPoint = classNames(this.props.className, {
       'calling-point clearfix' : true,
