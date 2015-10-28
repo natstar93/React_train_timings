@@ -6,14 +6,12 @@ var CallingPointWrapper = require('../components/calling-point-wrapper');
 
 describe('callingPointWrapper', function() {
 
-  it('loads calling point data', function() {
-    var callingPoints = TestUtils.renderIntoDocument(<CallingPointWrapper data={mockedData.callingPoints} />);
-    expect(callingPoints.props.data.length).toEqual(5);
-  });
-
   it('displays each calling point', function() {
-    var callingPoints = TestUtils.renderIntoDocument(<CallingPointWrapper data={mockedData.callingPoints} />);
-    var wrappers = TestUtils.scryRenderedDOMComponentsWithClass(callingPoints, 'calling-point');
-    expect(wrappers.length).toEqual(5);
+    var wrapperRenderer = TestUtils.createRenderer();
+    wrapperRenderer.render(
+      <CallingPointWrapper data={mockedData.callingPoints} />
+    );
+    var wrapper = wrapperRenderer.getRenderOutput();
+    expect(wrapper.props.children.length).toEqual(5);
   });
 })
