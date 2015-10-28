@@ -1,5 +1,5 @@
 var React = require('react');
-var arrivalStatus = require('./arrival-status');
+var departureStatus = require('./departure-status');
 var classNames = require('classnames');
 
 var CallingPoint = React.createClass({
@@ -8,9 +8,9 @@ var CallingPoint = React.createClass({
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
-    var arrival = actual || expected;
-    var arrivalTimeOutput = (scheduled === arrival ? null : arrival);
-    var departureStatus = classNames(this.props.className, {
+    var departure = actual || expected;
+    var departureTimeOutput = (scheduled === departure ? null : departure);
+    var callingPointDepartureStatus = classNames(this.props.className, {
       'departure-status' : true,
       'late' : scheduled !== expected
     })
@@ -25,15 +25,15 @@ var CallingPoint = React.createClass({
             {data.scheduled}
           </div>
           <div className={departureTime}>
-            {arrivalTimeOutput}
+            {departureTimeOutput}
           </div>
         </div>
         <div className="calling-point-departure">
           <div className="station-name" key={data.id}>
             {data.station}
           </div>
-          <div className={departureStatus}>
-            {arrivalStatus(scheduled, arrival)}
+          <div className={callingPointDepartureStatus}>
+            {departureStatus(scheduled, departure)}
           </div>
           <div className="platform">
             Platform <strong>{data.platform || '-'}</strong>

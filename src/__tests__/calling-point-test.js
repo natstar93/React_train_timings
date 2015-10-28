@@ -42,42 +42,42 @@ describe('calling point', function() {
   describe('departure time', function() {
     it('actual departure time displayed if train was late', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[1]}/>);
-      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
-      expect(callingPointArrival.textContent).toEqual('10:14');
+      expect(callingPointDeparture.textContent).toEqual('10:14');
     });
 
     it('not displayed if train was on time', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]}/>);
-      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
-      expect(callingPointArrival.textContent).toEqual('');
+      expect(callingPointDeparture.textContent).toEqual('');
     });
 
     it('expected time displayed if train expected late', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
-      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
-      expect(callingPointArrival.textContent).toEqual('10:17');
+      expect(callingPointDeparture.textContent).toEqual('10:17');
     });
 
     it('not displayed if train expected on time', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[3]}/>);
-      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
-      expect(callingPointArrival.textContent).toEqual('');
+      expect(callingPointDeparture.textContent).toEqual('');
     });
 
     it('is red if train expected late', function() {
       var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
-      var callingPointArrival = TestUtils.findRenderedDOMComponentWithClass(
+      var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
-      expect(callingPointArrival.className).toContain('late');
+      expect(callingPointDeparture.className).toContain('late');
     });
   });
 
