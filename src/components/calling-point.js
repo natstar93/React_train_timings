@@ -14,13 +14,17 @@ var CallingPoint = React.createClass({
       'departure-status' : true,
       'late' : scheduled !== expected
     })
+    var departureTime = classNames(this.props.className, {
+      'calling-point-departure-time' : true,
+      'late' : scheduled !== expected
+    });
     return (
       <div className="calling-point clearfix">
         <div className="calling-point-timings">
           <div className="calling-point-scheduled-time">
             {data.scheduled}
           </div>
-          <div className="calling-point-arrival-time">
+          <div className={departureTime}>
             {arrivalTimeOutput}
           </div>
         </div>
