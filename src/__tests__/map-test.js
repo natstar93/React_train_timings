@@ -13,6 +13,14 @@ describe('map', function() {
       );
       expect(callingPointImage.src).toContain('src/images/first-visited.png');
     });
+
+    it('shows train at stop if station "not visited"', function() {
+      var map = TestUtils.renderIntoDocument(<Map actual={mockedData.callingPoints[0].actual} position={'first-not-visited'} />);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
+        map, 'img'
+      );
+      expect(callingPointImage.src).toContain('src/images/first-not-visited.png');
+    });
   });
 
   describe('midway stop', function() {
@@ -48,6 +56,14 @@ describe('map', function() {
         map, 'img'
       );
       expect(callingPointImage.src).toContain('src/images/last-not-visited.png');
+    });
+
+    it('shows train if station visited', function() {
+      var map = TestUtils.renderIntoDocument(<Map actual={mockedData.callingPoints[5].actual} position={'last-visited'}/>);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
+        map, 'img'
+      );
+      expect(callingPointImage.src).toContain('src/images/last-visited.png');
     });
   });
 })
