@@ -24,11 +24,11 @@ body {
 
 .calling-point-wrapper {
   width:100%;
+  padding-top: 50px;
   overflow: hidden;
 }
 
 .calling-point {
-  padding: 20px;
   color:#0d345d;
 }
 
@@ -49,8 +49,8 @@ body {
 }
 
 .station-name {
-  float:none;
-  width:440px;
+  float:left;
+  width:385px;
   font-size: 2em;
 }
 
@@ -70,4 +70,8 @@ body {
 
 .visited {
   color:#999999;
+}
+
+.map {
+  float:left;
 }

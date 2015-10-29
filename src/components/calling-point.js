@@ -1,6 +1,7 @@
 var React = require('react');
 var departureStatus = require('./departure-status');
 var classNames = require('classnames');
+var Map = require('../components/map');
 
 var CallingPoint = React.createClass({
   render : function() {
@@ -33,6 +34,7 @@ var CallingPoint = React.createClass({
             {departureTimeOutput}
           </div>
         </div>
+        <Map/>
         <div className="calling-point-departure">
           <div className="station-name" key={data.id}>
             {data.station}
