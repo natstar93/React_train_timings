@@ -7,7 +7,7 @@ var CallingPointWrapper = React.createClass({
     return (
       <div className="calling-point-wrapper">
         {callingPointsData.map(function(result, index) {
-          return <CallingPoint key={index} data={result}/>
+          return <CallingPoint key={index} data={result} position={index}/>
         })}
       </div>
     )

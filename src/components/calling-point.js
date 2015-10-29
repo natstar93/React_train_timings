@@ -6,6 +6,7 @@ var Map = require('../components/map');
 var CallingPoint = React.createClass({
   render : function() {
     var data = this.props.data;
+    var index = this.props.position;
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
@@ -34,7 +35,7 @@ var CallingPoint = React.createClass({
             {departureTimeOutput}
           </div>
         </div>
-        <Map data={data.actual}/>
+        <Map actual={actual} position={index}/>
         <div className="calling-point-departure">
           <div className="station-name" key={data.id}>
             {data.station}

@@ -20,6 +20,9 @@ module.exports = function (config) {
         ]
       }
     },
+    proxies: {
+      '/src/images/': 'http://localhost:3000/src/images/'
+    },
     webpackServer: {
       noInfo: true //please don't spam the console when running in karma!
     }

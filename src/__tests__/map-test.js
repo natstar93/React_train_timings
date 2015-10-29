@@ -5,19 +5,31 @@ var Map = require('../components/map');
 var mockedData = require('./mocked-data.json');
 
 describe('map', function() {
-  it('shows a green stop if station visited', function() {
-    var map = TestUtils.renderIntoDocument(<Map data={mockedData.callingPoints[0].actual}/>);
-    var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
-      map, 'img'
-    );
-    expect(callingPointImage.src).toContain('src/images/green.png');
+  describe('first stop', function() {
+    it('shows a green end point stop if station visited', function() {
+      var map = TestUtils.renderIntoDocument(<Map actual={mockedData.callingPoints[0].actual} position={0} />);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
+        map, 'img'
+      );
+      expect(callingPointImage.src).toContain('src/images/first-departed.png');
+    });
   });
 
-  it('shows a blue stop if station not visited', function() {
-    var map = TestUtils.renderIntoDocument(<Map data={mockedData.callingPoints[2].actual}/>);
-    var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
-      map, 'img'
-    );
-    expect(callingPointImage.src).toContain('src/images/blue.png');
+  describe('midway stop', function() {
+    it('shows a green stop if station visited', function() {
+      var map = TestUtils.renderIntoDocument(<Map actual={mockedData.callingPoints[1].actual} position={1} />);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
+        map, 'img'
+      );
+      expect(callingPointImage.src).toContain('src/images/departed.png');
+    });
+
+    it('shows a blue stop if station not visited', function() {
+      var map = TestUtils.renderIntoDocument(<Map actual={mockedData.callingPoints[2].actual} position={2}/>);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithTag(
+        map, 'img'
+      );
+      expect(callingPointImage.src).toContain('src/images/blue.png');
+    });
   });
 })
