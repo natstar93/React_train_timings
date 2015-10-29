@@ -34,7 +34,7 @@ var CallingPoint = React.createClass({
             {departureTimeOutput}
           </div>
         </div>
-        <Map/>
+        <Map data={data.actual}/>
         <div className="calling-point-departure">
           <div className="station-name" key={data.id}>
             {data.station}

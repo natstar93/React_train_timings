@@ -50,7 +50,7 @@ body {
 
 .station-name {
   float:left;
-  width:385px;
+  min-width:420px;
   font-size: 2em;
 }
 
