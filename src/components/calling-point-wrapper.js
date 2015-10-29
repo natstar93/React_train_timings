@@ -1,5 +1,6 @@
 var React = require('react');
 var CallingPoint = require('./calling-point');
+var findStopPosition = require('./find-stop-position');
 
 var CallingPointWrapper = React.createClass({
   render : function(){
@@ -7,7 +8,8 @@ var CallingPointWrapper = React.createClass({
     return (
       <div className="calling-point-wrapper">
         {callingPointsData.map(function(result, index) {
-          return <CallingPoint key={index} data={result} position={index}/>
+          var position = findStopPosition(index, (callingPointsData.length))
+          return <CallingPoint key={index} data={result} position={position}/>
         })}
       </div>
     )

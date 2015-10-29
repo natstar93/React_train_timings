@@ -4,13 +4,19 @@ var React = require('react');
   render: function() {
     var actual = this.props.actual;
     var position = this.props.position;
+    var noOfCallingPoints = this.props.noOfCallingPoints;
+    var firstStop = (position === 'first');
+    var lastStop = (position === 'last');
+    console.log(position);
     var mapImage = function() {
-      if (actual && (position === 0)) {
+      if (actual && firstStop) {
         return 'first-departed';
+      } else if (!actual && lastStop) {
+        return 'last-not-visited';
       } else if (actual) {
         return 'departed';
       } else {
-        return 'blue';
+        return 'not-visited';
       }
     }
     return (

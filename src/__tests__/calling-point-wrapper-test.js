@@ -14,4 +14,15 @@ describe('callingPointWrapper', function() {
     var wrapper = wrapperRenderer.getRenderOutput();
     expect(wrapper.props.children.length).toEqual(5);
   });
+
+  describe('finds stop position', function() {
+    it('correctly outputs first', function() {
+      var wrapperRenderer = TestUtils.createRenderer();
+      wrapperRenderer.render(
+        <CallingPointWrapper data={mockedData.callingPoints} />
+      );
+      var wrapper = wrapperRenderer.getRenderOutput();
+      expect(wrapper.props.children[0].props.position).toEqual('first');
+    })
+  });
 })
