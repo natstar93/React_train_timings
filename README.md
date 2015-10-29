@@ -24,8 +24,6 @@ Using the supplied live departure board data, create a web page that faithfully 
 Node v4.2.1<br>
 npm v2.14.7
 
-###Serve locally
-
 1. Clone this repo (git clone https://bitbucket.org/ttl-engineering/repo_webdev_for_natalie.akam-gmail.com)
 2. In terminal, go to the root of the folder and type the following commands into terminal
   1. npm install
@@ -35,7 +33,7 @@ npm v2.14.7
 Optional: Update the file **ldb.json** at the root of the directory to see the train change position!
 
 ###Run Tests
-Type **npm test** into terminal
+After the npm install, type **npm test** into terminal
 
 ##Future Improvements
 * Use date objects instead of strings to represent departure times
