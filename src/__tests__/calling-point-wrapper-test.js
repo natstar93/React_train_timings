@@ -12,7 +12,7 @@ describe('callingPointWrapper', function() {
       <CallingPointWrapper data={mockedData.callingPoints} />
     );
     var wrapper = wrapperRenderer.getRenderOutput();
-    expect(wrapper.props.children.length).toEqual(5);
+    expect(wrapper.props.children.length).toEqual(6);
   });
 
   describe('finds stop position', function() {
@@ -22,7 +22,7 @@ describe('callingPointWrapper', function() {
         <CallingPointWrapper data={mockedData.callingPoints} />
       );
       var wrapper = wrapperRenderer.getRenderOutput();
-      expect(wrapper.props.children[0].props.position).toEqual('first');
+      expect(wrapper.props.children[0].props.position).toEqual('first-visited');
     })
   });
 })

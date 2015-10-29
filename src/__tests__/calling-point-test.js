@@ -81,7 +81,7 @@ describe('calling point', function() {
     });
 
     it('is red if train expected late', function() {
-      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[4]}/>);
       var callingPointDeparture = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'calling-point-departure-time'
       );
@@ -115,7 +115,7 @@ describe('calling point', function() {
     });
 
     it('is red if train expected late', function() {
-      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[2]}/>);
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[4]}/>);
       var callingPointStatus = TestUtils.findRenderedDOMComponentWithClass(
         callingPoint, 'departure-status'
       );

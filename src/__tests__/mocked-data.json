@@ -23,12 +23,19 @@ module.exports = {
             "station": "Shadwell",
             "scheduled": "10:16",
             "expected": "10:17",
+            "actual": "10:17",
             "platform": "2"
         },
         {
             "station": "Whitechapel",
             "scheduled": "10:19",
             "expected": "10:19",
+            "platform": "1"
+        },
+        {
+            "station": "Hoxton",
+            "scheduled": "10:22",
+            "expected": "10:23",
             "platform": "1"
         },
         {

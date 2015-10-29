@@ -7,7 +7,6 @@ var CallingPoint = React.createClass({
   render : function() {
     var data = this.props.data;
     var position = this.props.position;
-    var noOfCallingPoints = this.props.noOfCallingPoints;
     var actual = data.actual;
     var scheduled = data.scheduled;
     var expected = data.expected;
