@@ -138,4 +138,14 @@ describe('calling point', function() {
       expect(callingPointStatus.className).toNotContain('late');
     });
   });
+
+  describe('map', function() {
+    it('displays correct image', function() {
+      var callingPoint = TestUtils.renderIntoDocument(<CallingPoint data={mockedData.callingPoints[0]} position='first-visited'/>);
+      var callingPointImage = TestUtils.findRenderedDOMComponentWithClass(
+        callingPoint, 'map-img'
+      );
+      expect(callingPointImage.src).toContain('src/images/first-visited.png');
+    });
+  });
 });
